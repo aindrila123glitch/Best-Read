@@ -93,9 +93,82 @@ document.addEventListener('DOMContentLoaded', () => {
   // Data mappings for Coming Soon modals
   const modalContents = {
     publishing: {
-      tag: 'Printed Book Publishing',
-      title: 'Premium Publishing Pipeline',
-      desc: 'COMING SOON — We are currently structuring our premium publishing pipeline. Our editorial staff, proofreading systems, and global distribution networks are aligning to bring authoritative literature and bespoke physical books to stores and readers worldwide.'
+      tag: 'Printed & E-Book Publishing',
+      title: 'Your Story Deserves the Spotlight',
+      desc: `
+        <div class="modal-rich-content">
+          <p class="modal-sub-headline">Let us help you publish with confidence, quality, and impact.</p>
+          
+          <div class="modal-section">
+            <p><strong>End-to-End Publishing Excellence:</strong> From manuscript to marketplace, we handle everything—so you can focus on what matters most: your story.</p>
+          </div>
+
+          <div class="modal-section">
+            <p><strong>Editorial & Content Perfection:</strong> Polish your work to a professional standard with our expert team:</p>
+            <ul class="modal-list">
+              <li>Precision Manuscript Copy Editing</li>
+              <li>Meticulous Proofreading</li>
+              <li>Fluent Translation (English & Bengali)</li>
+            </ul>
+          </div>
+
+          <div class="modal-section">
+            <p><strong>Design That Captivates:</strong> Make a powerful first impression with stunning visuals:</p>
+            <ul class="modal-list">
+              <li>Custom Illustration</li>
+              <li>Eye-catching Cover Design</li>
+              <li>Professional Layout & Formatting</li>
+            </ul>
+          </div>
+
+          <div class="modal-section">
+            <p><strong>Seamless Production & Publishing:</strong> We turn your manuscript into a finished product, ready for readers:</p>
+            <ul class="modal-list">
+              <li>ISBN Allocation for global recognition</li>
+              <li>High-quality Printing & Binding (for print editions)</li>
+              <li>Expert E-book Creation (English & Bengali, from scratch)</li>
+            </ul>
+          </div>
+
+          <div class="modal-section">
+            <p><strong>Powerful Promotion & Visibility:</strong> Your book deserves to be seen, talked about, and celebrated:</p>
+            <ul class="modal-list">
+              <li>Strategic Book Promotion Campaigns</li>
+              <li>Memorable Book Launch & Release Programmes</li>
+              <li>Influencer outreach via Reviewers & Bookstagrammers</li>
+            </ul>
+          </div>
+
+          <div class="modal-section">
+            <p><strong>Sales, Distribution & Reach:</strong> Maximise your audience—locally and globally:</p>
+            <ul class="modal-list">
+              <li>Online Sales via our website, Amazon & Flipkart</li>
+              <li>Offline Distribution & Retail Presence</li>
+              <li>Exclusive showcasing at the International Kolkata Book Fair & other major fairs</li>
+              <li>Reliable Worldwide Delivery</li>
+            </ul>
+          </div>
+
+          <div class="modal-section">
+            <p><strong>Tailored Services for Every Format</strong></p>
+            <ul class="modal-list-desc">
+              <li><strong>Printed Books:</strong> A complete publishing journey—from editing and design to printing, promotion, and global distribution.</li>
+              <li><strong>E-Books:</strong> Digitally optimised publishing with professional formatting, online sales, and targeted promotion.</li>
+              <li><strong>Magazines & Journals:</strong> High-quality editorial, design, printing, and distribution services tailored for periodicals and academic publications.</li>
+            </ul>
+          </div>
+
+          <div class="modal-section">
+            <p><strong>Why Choose Us?</strong></p>
+            <ul class="modal-list">
+              <li>Bilingual expertise in English & Bengali publishing</li>
+              <li>Strong presence in major book fairs and literary networks</li>
+              <li>Integrated online + offline distribution channels</li>
+              <li>Dedicated support from concept to consumer</li>
+            </ul>
+          </div>
+        </div>
+      `
     },
     printing: {
       tag: 'Custom Printing Services',
@@ -125,7 +198,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Inject data into layout elements
     modalTag.textContent = data.tag;
     modalTitle.textContent = data.title;
-    modalDesc.textContent = data.desc;
+    modalDesc.innerHTML = data.desc;
 
     // Make modal active
     modal.classList.add('is-active');
