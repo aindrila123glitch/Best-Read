@@ -194,7 +194,7 @@
             <p class="card-desc">Tailored industrial offset, custom binding, and commercial volume print fulfillment for companies and publishers.</p>
           </div>
           <div class="card-footer">
-            <span>COMING SOON</span>
+            <span>More Details</span>
             <span style="width: 8px; height: 8px; border-radius: 50%; background-color: var(--color-primary); display: inline-block;"></span>
           </div>
         </div>
@@ -207,7 +207,7 @@
             <p class="card-desc">Architecting custom web applications, e-commerce engines, subscription databases, and corporate digital environments.</p>
           </div>
           <div class="card-footer">
-            <span>COMING SOON</span>
+            <span>More Details</span>
             <span style="width: 8px; height: 8px; border-radius: 50%; background-color: var(--color-primary); display: inline-block;"></span>
           </div>
         </div>
@@ -232,23 +232,35 @@
           </p>
           
           <form class="contact-form" id="main-contact-form" action="javascript:void(0);">
+            <!-- Honeypot Spam Protection -->
+            <input type="text" name="_honey" style="display:none">
             
             <div class="form-group-row" id="form-row-personal">
               <div class="form-group">
-                <input type="text" class="form-input" id="form-input-name" placeholder="Full Name" required>
+                <input type="text" name="name" class="form-input" id="form-input-name" placeholder="Full Name" required>
               </div>
               
               <div class="form-group">
-                <input type="email" class="form-input" id="form-input-email" placeholder="Email Address" required>
+                <input type="email" name="email" class="form-input" id="form-input-email" placeholder="Email Address" required>
               </div>
             </div>
             
             <div class="form-group" id="form-row-subject">
-              <input type="text" class="form-input" id="form-input-subject" placeholder="Subject / Area of Interest" required>
+              <input type="text" name="subject" class="form-input" id="form-input-subject" placeholder="Subject / Area of Interest" required>
             </div>
             
             <div class="form-group" id="form-row-message">
-              <textarea class="form-input" id="form-input-message" placeholder="Describe your request..." required></textarea>
+              <textarea name="message" class="form-input" id="form-input-message" placeholder="Describe your request..." required></textarea>
+            </div>
+            
+            <!-- Alphanumeric Visual Captcha Spam Protection -->
+            <div class="captcha-group" id="form-row-captcha">
+              <span class="captcha-label">Verify Code:</span>
+              <canvas id="form-captcha-canvas" width="120" height="40" class="captcha-canvas"></canvas>
+              <button type="button" class="btn-refresh-captcha" id="btn-refresh-form-captcha" aria-label="Refresh Captcha">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"/></svg>
+              </button>
+              <input type="text" class="form-input captcha-input" id="form-input-captcha" placeholder="Enter code" required>
             </div>
             
             <button type="submit" class="btn btn-primary btn-submit" id="form-submit-btn">Send Message</button>
@@ -268,7 +280,18 @@
               <p class="corporate-detail" id="corp-address-line2">Premium Elite Complex, New Delhi, India</p>
               <p class="corporate-detail" id="corp-registration-tag">CIN: U22110DL2026PTC394982</p>
               
-              <a href="mailto:info@bestread.in" class="corporate-email" id="corporate-email-link">info@bestread.in</a>
+              <!-- Reveal Email Captcha Wrapper -->
+              <div class="reveal-email-container" id="reveal-email-block">
+                <button type="button" class="btn-reveal-email" id="btn-reveal-email-trigger">Reveal Email</button>
+                <div class="reveal-email-captcha" id="reveal-email-captcha-group" style="display: none;">
+                  <canvas id="reveal-captcha-canvas" width="100" height="35" class="captcha-canvas"></canvas>
+                  <button type="button" class="btn-refresh-captcha" id="btn-refresh-reveal-captcha" aria-label="Refresh Captcha">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"/></svg>
+                  </button>
+                  <input type="text" id="reveal-captcha-input" placeholder="Code" required>
+                  <button type="button" id="btn-reveal-captcha-verify">Verify</button>
+                </div>
+              </div>
             </div>
             
           </div>
@@ -309,7 +332,7 @@
         This particular service is currently being incubated. We are structuring our premium operational pipelines.
       </p>
       
-      <button class="btn btn-close-cta" id="modal-return-cta">Back To Website</button>
+      <button class="btn btn-close-cta" id="modal-return-cta">Contact Us</button>
 
     </div>
   </div>
